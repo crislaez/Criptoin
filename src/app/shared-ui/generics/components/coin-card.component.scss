@@ -1,0 +1,46 @@
+@import '../../../../theme/variables';
+
+
+:host{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  ion-card{
+    min-height: 70px;
+    --background: rgba(255,255,255,0.1) !important;
+
+    .ion-card-wrapper{
+      height: 100%;
+
+      .ion-card-left{
+        width: 35%;
+        @include displays-around-center();
+
+        ion-avatar{
+          width: 3em;
+        }
+
+        .ion-card-left__div{
+          width: 55%;
+        }
+      }
+
+      .ion-card-center{
+        width: 25%;
+      }
+
+      .ion-card-rigth{
+        width: 30%;
+        height: 60%;
+        text-align: center;
+      }
+
+      .ion-card-end{
+        width: 8%;
+      }
+    }
+
+  }
+
+}

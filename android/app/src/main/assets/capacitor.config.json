@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.criptoin",
+	"appName": "criptoin",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,32 @@
+@import '../../../theme/variables';
+
+:host{
+  width: 100%;
+
+  .ion-card-header{
+    padding: 10px;
+
+    .ion-card-header-avatar{
+      width: 15%;
+    }
+
+    .ion-card-header-title{
+      width: 70%;
+      font-size: 25px;
+      
+    }
+
+    .ion-card-header-empty{
+      width: 15%;
+    }
+
+    .ion-card-header-down{
+      width: 90%;
+
+      >div{
+        width: 45%;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">criptoin</string>
+    <string name="title_activity_main">criptoin</string>
+    <string name="package_name">com.example.criptoin</string>
+    <string name="custom_url_scheme">com.example.criptoin</string>
+</resources>

@@ -1,0 +1,48 @@
+@import '../../../theme/variables';
+
+:host{
+  width: 100%;
+
+  .ion-card-header{
+    padding: 10px;
+
+    .ion-card-header-avatar{
+      width: 15%;
+    }
+
+    .ion-card-header-title{
+      width: 68%;
+      font-size: 25px;
+    }
+
+    .ion-card-header-empty{
+      width: 15%;
+
+      ion-icon{
+        font-size: 30px !important;
+      }
+
+      .icon-add{
+        color: #16A671;
+
+      }
+
+      .icon-remove{
+        color: red;
+      }
+
+      // ion-icon{
+      //   width: 100%;
+      // }
+    }
+
+    .ion-card-header-down{
+      width: 60%;
+
+      >div{
+        width: 45%;
+      }
+    }
+
+  }
+}

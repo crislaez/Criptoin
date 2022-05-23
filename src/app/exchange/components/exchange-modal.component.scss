@@ -1,0 +1,40 @@
+@import '../../../theme/variables';
+
+
+
+.header-empty{
+  width: 100%;
+  height: 30px;
+  background: $primary;
+}
+
+ion-card{
+  min-height: 500px;
+  padding: 10px;
+  --background: rgba(255,255,255,0.1) !important;
+
+  .ion-card-chart{
+    width: 100%;
+    // margin-top: 20px;
+  }
+
+  .days-button-wrapper{
+    margin-top: 10px;
+
+    ion-button{
+      font-size: 11px;
+      width: 25% !important;
+      --background: #FFFFFF;
+      --color: #282c34
+      border-radius: 50%;
+    }
+  }
+
+  .read-moore-button{
+    --background: none ;
+    --color: #5DACF1;
+    font-size: 11px;
+  }
+
+}
+
