@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Coin } from '@criptoin/shared/coin';
-import { trackById, sliceLongText } from '@criptoin/shared/utils/helpers/functions';
+import { trackById, sliceText } from '@criptoin/shared/utils/helpers/functions';
 
 @Component({
   selector: 'app-asset-information',
@@ -9,23 +9,23 @@ import { trackById, sliceLongText } from '@criptoin/shared/utils/helpers/functio
       <div class="margin-top-30 mediun-size text-color-light">{{ 'COMMON.LINKS' | translate }}</div>
 
       <div *ngFor="let item of coinInfoLinks; trackBy: trackById" class="displays-between margin-top-10">
-        <div>{{ item?.label | translate }}</div>
+        <div class="width-25">{{ item?.label | translate }}:</div>
 
         <ng-container *ngIf="coinInfo?.links?.[item?.field]; else noInfo">
-          <div *ngIf="item?.field !== 'subreddit_url'" >
+          <div *ngIf="item?.field !== 'subreddit_url'" class="width-70">
             <ng-container *ngFor="let link of filterLinks(coinInfo?.links?.[item?.field])">
-              <a [href]="link">{{ sliceLongText(link) }}</a>
+              <a [href]="link">{{ sliceText(link, 35) }}</a>
               <br>
             </ng-container>
           </div>
-          <div *ngIf="item?.field === 'subreddit_url'" ><a [href]="coinInfo?.links?.[item?.field]">{{ coinInfo?.links?.[item?.field] }}</a></div>
+          <div *ngIf="item?.field === 'subreddit_url'" class="width-70"><a [href]="coinInfo?.links?.[item?.field]">{{ sliceText(coinInfo?.links?.[item?.field], 35) }}</a></div>
         </ng-container>
       </div>
 
       <div class="margin-top-30 mediun-size text-color-light">{{ 'COMMON.ASSET_INFORMATION' | translate }}</div>
 
       <div *ngFor="let item of coinInfoFiels; trackBy: trackById" class="displays-between margin-top-10">
-        <div>{{ item?.label | translate }}</div>
+        <div>{{ item?.label | translate }}:</div>
         <ng-container *ngIf="coinInfo?.[item?.field]; else noInfo">
           <div *ngIf="item?.field === 'last_updated'">{{ coinInfo?.[item?.field] | date: 'MMMM d, y, h:mm a'}}</div>
           <div *ngIf="item?.field !== 'last_updated'">{{ coinInfo?.[item?.field] | number:'1.2-2'}} <span *ngIf="!['total_volume','total_supply']?.includes(item?.field)">$</span></div>
@@ -44,7 +44,7 @@ import { trackById, sliceLongText } from '@criptoin/shared/utils/helpers/functio
 export class AssetInformationComponent {
 
   trackById = trackById;
-  sliceLongText = sliceLongText;
+  sliceText = sliceText;
   @Input() coinInfo: Partial<Coin>;
 
   coinInfoLinks = [

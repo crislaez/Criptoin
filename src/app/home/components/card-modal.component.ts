@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, ViewChild } from '@angular/core';
 import { Coin, CoinActions, fromCoin } from '@criptoin/shared/coin';
 import { fromStorage, StorageActions } from '@criptoin/shared/storage';
-import { chartOptions, dateFormat, emptyObject, errorImage, gotToTop, sliceSmallText } from '@criptoin/shared/utils/helpers/functions';
+import { chartOptions, dateFormat, emptyObject, errorImage, gotToTop } from '@criptoin/shared/utils/helpers/functions';
 import { IonContent, ModalController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { Chart, registerables } from 'chart.js';
@@ -104,7 +104,6 @@ import { switchMap, tap } from 'rxjs/operators';
 export class CardModalComponent {
 
   gotToTop = gotToTop;
-  sliceSmallText = sliceSmallText;
   dateFormat = dateFormat;
   errorImage = errorImage;
   emptyObject = emptyObject;

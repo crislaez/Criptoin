@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Coin } from '@criptoin/shared/coin';
-import { errorImage, sliceSmallText } from '@criptoin/shared/utils/helpers/functions';
+import { errorImage } from '@criptoin/shared/utils/helpers/functions';
 
 @Component({
   selector: 'app-header-modal',
@@ -53,7 +53,6 @@ import { errorImage, sliceSmallText } from '@criptoin/shared/utils/helpers/funct
 export class HeaderModalComponent {
 
   errorImage = errorImage;
-  sliceSmallText = sliceSmallText;
   @Input() coinInfo: Partial<Coin>;
   @Input() storageCoins: string[];
   @Output() addCoin = new EventEmitter<Partial<Coin>>();

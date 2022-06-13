@@ -48,7 +48,8 @@
     "FACEBOOK":"Facebook",
     "SLACK":"Slack",
     "TELEGRAM":"Telegram",
-    "OTHER":"Others",
+    "OTHER":"Others 1",
+    "OTHER_2":"Others 2",
     "FAILED_SAVE_20_CRIPTO_MORE":"Ya tienes un total de 20 criptomonedas guardadas!",
     "LINKS":"Links"
   },

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Coin } from '@criptoin/shared/coin';
-import { errorImage, sliceSmallText } from '@criptoin/shared/utils/helpers/functions';
+import { errorImage, sliceText } from '@criptoin/shared/utils/helpers/functions';
 
 @Component({
   selector: 'app-coin-card',
@@ -14,7 +14,7 @@ import { errorImage, sliceSmallText } from '@criptoin/shared/utils/helpers/funct
           </ion-avatar>
 
           <div class="ion-card-left__div">
-            <div>{{ sliceSmallText(coin?.name) }}</div>
+            <div>{{ sliceText(coin?.name, 5) }}</div>
             <div>{{ coin?.market_cap_rank }} {{ coin?.symbol }}</div>
           </div>
         </div>
@@ -55,7 +55,7 @@ import { errorImage, sliceSmallText } from '@criptoin/shared/utils/helpers/funct
 export class CoinCardComponent {
 
   errorImage = errorImage;
-  sliceSmallText = sliceSmallText;
+  sliceText = sliceText;
   @Input() coin: Coin;
   @Output() presentPopover = new EventEmitter<{ev:any, coin:Coin}>();
   @Output() presentModal = new EventEmitter<{coin:Coin}>();

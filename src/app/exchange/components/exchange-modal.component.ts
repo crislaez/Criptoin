@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, ViewChild } from '@angular/core';
 import { Exchange, ExchangeActions, fromExchange } from '@criptoin/shared/exchange';
-import { chartOptions, dateFormat, emptyObject, gotToTop, sliceSmallText } from '@criptoin/shared/utils/helpers/functions';
+import { chartOptions, dateFormat, emptyObject, gotToTop, sliceText } from '@criptoin/shared/utils/helpers/functions';
 import { IonContent, ModalController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { Chart, registerables } from 'chart.js';
@@ -50,8 +50,8 @@ import { switchMap, tap } from 'rxjs/operators';
                     <div class="margin-top-30 mediun-size text-color-light">{{ 'COMMON.LINKS' | translate }}</div>
                     <div class="displays-between margin-top-10">
                       <ng-container *ngFor="let url of exchangesLinks">
-                        <div class="width-25 margin-top-10">{{ url?.label | translate }}</div>
-                        <div *ngIf="exchangeInfo?.[url?.filed] as field" class="width-70 margin-top-10"><a [href]="field">{{ field }}</a></div>
+                        <div class="width-25 margin-top-10">{{ url?.label | translate }}:</div>
+                        <div *ngIf="exchangeInfo?.[url?.filed] as field" class="width-70 margin-top-10"><a [href]="field">{{ sliceText(field, 30) }}</a></div>
                         <div *ngIf="!exchangeInfo?.[url?.filed] as field" class="width-70 margin-top-10"> - </div>
                       </ng-container>
                     </div>
@@ -98,8 +98,8 @@ import { switchMap, tap } from 'rxjs/operators';
 export class ExchangeModalComponent {
 
   gotToTop = gotToTop;
+  sliceText = sliceText;
   dateFormat = dateFormat;
-  sliceSmallText = sliceSmallText;
   emptyObject = emptyObject;
   @ViewChild(IonContent) content: IonContent;
   @Input() set exchange(exchange: Exchange){
@@ -121,7 +121,7 @@ export class ExchangeModalComponent {
     {id:4, label:'COMMON.SLACK', filed:'slack_url'},
     {id:5, label:'COMMON.TELEGRAM', filed:'telegram_url'},
     {id:6, label:'COMMON.OTHER', filed:'other_url_1'},
-    {id:7, label:'', filed:'other_url_2'}
+    {id:7, label:'COMMON.OTHER_2', filed:'other_url_2'}
   ];
 
   chart:any = [];

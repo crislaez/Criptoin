@@ -21,16 +21,8 @@ export const gotToTop = (content: IonContent): void => {
   content?.scrollToTop(500);
 }
 
-export const sliceSmallText = (text: string) => {
-  return text?.length > 5 ? text?.slice(0, 5) + '...' : text;
-}
-
-export const sliceText = (text: string) => {
-  return text?.length > 17 ? text?.slice(0, 17) + '...' : text;
-}
-
-export const sliceLongText = (text: string) => {
-  return text?.length > 25 ? text?.slice(0, 25) + '...' : text;
+export const sliceText = (text: string, long:number) => {
+  return text?.length > long ? text?.slice(0, long) + '...' : text;
 }
 
 export const dateFormat = (timeStamp: number) =>  {

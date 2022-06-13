@@ -14,7 +14,7 @@ import { errorImage, sliceText } from '@criptoin/shared/utils/helpers/functions'
           </ion-avatar>
 
           <div class="ion-card-left__div">
-            <div>{{ sliceText(exchange?.name) }}</div>
+            <div>{{ sliceText(exchange?.name, 17) }}</div>
             <div>{{ exchange?.trust_score_rank }}</div>
           </div>
         </div>

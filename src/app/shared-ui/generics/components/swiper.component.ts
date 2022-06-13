@@ -24,7 +24,7 @@ SwiperCore.use([Pagination, Navigation]);
             <ion-card-header class="font-medium">
               <div class="displays-around-center">
                 <div class="ion-card-header-left">
-                  <div >{{ item?.market_cap_rank }} <span class="text-color-light">{{ sliceText(item?.name) }}</span></div>
+                  <div >{{ item?.market_cap_rank }} <span class="text-color-light">{{ sliceText(item?.name, 17) }}</span></div>
                 </div>
 
                 <div class="ion-card-header-rigth">
